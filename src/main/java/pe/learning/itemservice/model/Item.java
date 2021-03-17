@@ -12,6 +12,11 @@ public class Item {
     private Integer quantity;
 
     public Double getTotal(){
-        return product.getPrecio() * quantity.doubleValue();
+        return product.getPrice() * quantity.doubleValue();
+    }
+
+    public Item(Product product){
+        this.product=product;
+        this.quantity=1;
     }
 }

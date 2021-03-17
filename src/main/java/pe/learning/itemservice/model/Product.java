@@ -10,6 +10,6 @@ import java.util.Date;
 public class Product {
     private Long id;
     private String name;
-    private Double precio;
-    private Date creation_date;
+    private Double price;
+    private Date creationDate;
 }
