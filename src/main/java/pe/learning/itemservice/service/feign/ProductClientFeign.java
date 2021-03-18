@@ -25,6 +25,6 @@ public class ProductClientFeign implements ProductClient {
     @Override
     public Item findById(Long id, Integer quantity) {
         log.info("findById - Feign");
-        return new Item(productFeign.findById(id),quantity);
+        return new Item(productFeign.findById(id), quantity);
     }
 }

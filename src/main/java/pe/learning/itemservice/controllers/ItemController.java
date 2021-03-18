@@ -20,14 +20,14 @@ public class ItemController {
     ProductClient productClient;
 
     @GetMapping("/items")
-    public List<Item> findAll(){
+    public List<Item> findAll() {
         return productClient.findAll();
     }
 
 
     @GetMapping("/item")
-    public Item findItemById(@RequestParam(name="id") Long id,
-                             @RequestParam(name="quantity") Integer quantity){
+    public Item findItemById(@RequestParam(name = "id") Long id,
+                             @RequestParam(name = "quantity") Integer quantity) {
         return productClient.findById(id, quantity);
     }
 }

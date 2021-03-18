@@ -7,6 +7,7 @@ import java.util.List;
 public interface ProductClient {
 
     List<Item> findAll();
+
     Item findById(Long id, Integer quantity);
 
 }

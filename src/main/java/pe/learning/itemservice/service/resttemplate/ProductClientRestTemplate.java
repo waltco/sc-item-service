@@ -41,7 +41,8 @@ public class ProductClientRestTemplate implements ProductClient {
         log.info("findById - RestTemplate");
         Map<String, String> pathVariables = new HashMap<>();
         pathVariables.put("id", id.toString());
-        Product product = restTemplate.getForObject("http://product-service/product/{id}", Product.class, pathVariables);
+        Product product = restTemplate
+                .getForObject("http://product-service/product/{id}", Product.class, pathVariables);
         return new Item(product, quantity);
     }
 
