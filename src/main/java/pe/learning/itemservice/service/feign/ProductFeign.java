@@ -7,7 +7,7 @@ import pe.learning.itemservice.model.Product;
 
 import java.util.List;
 
-@FeignClient(name="product-service", url = "localhost:8001")
+@FeignClient(name="product-service")
 public interface ProductFeign {
 
     @GetMapping("/products")
