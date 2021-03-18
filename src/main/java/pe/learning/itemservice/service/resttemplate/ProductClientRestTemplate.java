@@ -28,7 +28,7 @@ public class ProductClientRestTemplate implements ProductClient {
     }
 
     private List<Product> getProductListRTExchange() {
-        return restTemplate.exchange("http://localhost:8001/products/",
+        return restTemplate.exchange("http://product-service/products/",
                                      HttpMethod.GET,
                                      null,
                                      new ParameterizedTypeReference<List<Product>>() {
@@ -41,12 +41,12 @@ public class ProductClientRestTemplate implements ProductClient {
         log.info("findById - RestTemplate");
         Map<String, String> pathVariables = new HashMap<>();
         pathVariables.put("id", id.toString());
-        Product product = restTemplate.getForObject("http://localhost:8001/product/{id}", Product.class, pathVariables);
+        Product product = restTemplate.getForObject("http://product-service/product/{id}", Product.class, pathVariables);
         return new Item(product, quantity);
     }
 
     public List<Product> getProductListRTGetForEntity() {
-        Product[] body = restTemplate.getForEntity("http://localhost:8001/products/", Product[].class).getBody();
+        Product[] body = restTemplate.getForEntity("http://product-service/products/", Product[].class).getBody();
         return Arrays.asList(Objects.requireNonNull(body));
     }
 }
